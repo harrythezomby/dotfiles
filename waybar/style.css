@@ -1,16 +1,12 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Iosevka Nerd Font, FontAwesome;
+    font-family: Iosevka NF, FontAwesome;
     font-weight: 600;
-    font-size: 13px;
 }
 
 window#waybar {
-    background: linear-gradient(90deg, rgb(22, 22, 22) 0%, rgb(22, 22, 22) 100%);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    background: rgb(30, 30, 30);
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 window#waybar.hidden {
@@ -48,7 +44,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 2px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -71,100 +67,66 @@ button:hover {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#bluetooth,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
-}
 
-#custom-apps {
-    padding: 0 5px;
-}
 
-#custom-pmenu {
-    padding: 0 5px;
-}
-
-#custom-updates {
-    padding: 0 5px;
-}
-
+#custom-apps,
+#custom-pmenu,
 #custom-VM {
     padding: 0 5px;
-}
-
-#window {
-    border-radius: 15px;
 }
 
 #workspaces {
     margin: 0 4px;
 }
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
-
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
 
+#window {
+    background-color: #77d2ff;
+}
+
+#window,
+#clock,
+#network,
+#bluetooth,
+#pulseaudio,
+#temperature,
+#memory,
+#cpu,
+#tray {
+    border-radius: 10px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
 #clock {
     background-color: #77d2ff;
     color: #000000;
-    border-radius: 15px;
 }
 
-label:focus {
-    background-color: #000000;
-}
 
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
+#memory,
+#temperature,
+#pulseaudio,
 #network {
-    background-color: #ff6eb1;
+    background-color: #ff2ec7;
     color: #000000;
-    border-radius: 15px;
 }
 
 #bluetooth {
     background-color: #fff27f;
     color: #000000;
-    border-radius: 15px;
 }
 
-#pulseaudio {
-    background-color: #7effb0;
-    color: #000000;
-    border-radius: 15px;
-}
 
 #tray {
-    background-color: #d893ff;
-    border-radius: 15px;
+    background-color: transparent;
 }
 
 #tray > .passive {
@@ -176,60 +138,33 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#language {
-    background: transparent;
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
 #wlr-taskbar {
     color: #ffffff;
-    font-size: 12px;
-}
-
-#memory {
-    background: transparent;
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-}
-
-#disk {
-    background: transparent;
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-}
-
-#temperature {
-    background: transparent;
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-}
-
-#cpu {
-    background: transparent;
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-}
-
-#mpris {
-    color: #fff;
     font-size: 12px;
 }
 
 * { 
     padding: 0;
     margin: 0;
+}
+
+#custom-apps,
+#group-vm,
+#group-power {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#network {
+    font-size: 20px;
+}
+
+#clock {
+    font-size: 25px;
 }
