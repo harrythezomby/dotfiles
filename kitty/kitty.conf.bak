@@ -1,0 +1,35 @@
+font_family Iosevka NF
+font_size 15
+include ./theme.conf
+term xterm-256color
+
+
+# BEGIN_KITTY_THEME
+# Tokyo Night
+include current-theme.conf
+# END_KITTY_THEME
+
+# Bottom Tab Config
+tab_bar_min_tabs            1
+tab_bar_edge                bottom
+tab_bar_style               powerline
+tab_powerline_style         slanted
+tab_title_template          {index}. {title} ({tab.active_exe}) {' :{}:'.format(num_windows) if num_windows > 1 else ''}
+
+# Cursor Config
+cursor_shape beam
+cursor_blink_interval 0
+
+# Trackpad Scroll Speed
+touch_scroll_multiplier 8.0
+
+# Disable bell
+enable_audio_bell no
+
+# Clipboard Config
+clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
+
+# Shell Int
+shell_integration enabled
+
+
