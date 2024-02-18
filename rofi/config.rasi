@@ -15,7 +15,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Papirus";
+	icon-theme: "Reversal-blue-dark";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
@@ -179,3 +179,11 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
+
+//@theme "/home/harija/.local/share/rofi/themes/simple-tokyonight.rasi"
+
+//@theme "/home/harija/.local/share/rofi/themes/rounded-blue-dark.rasi"
+
+//@theme "/home/harija/.local/share/rofi/themes/windows11-grid-dark.rasi"
+
+@theme "/home/harija/.local/share/rofi/themes/rounded-blue-dark.rasi"

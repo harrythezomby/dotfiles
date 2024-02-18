@@ -5,7 +5,7 @@ term xterm-256color
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# Lavandula
 include current-theme.conf
 # END_KITTY_THEME
 

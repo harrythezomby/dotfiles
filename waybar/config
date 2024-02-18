@@ -4,27 +4,32 @@
         "output": "DP-2",
         "position": "left", // Waybar position (top|bottom|left|right)
         "height": 1080, // Waybar height (to be removed for auto height)
-        "width": 10, // Waybar width
+        "width": 5, // Waybar width
         "spacing": 8, // Gaps between modules (4px)
         // Choose the order of the modules
-        "modules-left": ["custom/apps", "group/group-vm", "hyprland/workspaces", "wlr/taskbar"],
-        //"modules-center": [],
-        "modules-right": ["clock", "cpu", "memory",  "temperature",  "pulseaudio", "network", "backlight", "battery",  "tray", "group/group-power"],
+        "modules-left": ["custom/apps", "custom/files", "group/group-vm", "custom/pmenu", "hyprland/workspaces", "cpu#graph", "wlr/taskbar"],
+        "modules-center": ["clock"],
+        "modules-right": ["tray", "cpu#percent", "memory",  "temperature",  "pulseaudio", "network", "backlight", "battery"],
         //Modules configuration
 
         "custom/pmenu": {
-            "format": " ",
+            "format": " ",
             "on-click": "sleep 0.1 && rofi -show p -modi p:rofi-power-menu"
         },
 
         "custom/apps": {
-            "format": "󰣇",
+            "format": "󰣇 ",
             "on-click": "sleep 0.1 && rofi -show drun -show-icons"
         },
 
         "custom/VM": {
             "format": " ",
             "on-click": "virt-viewer -c qemu:///system"
+        },
+
+        "custom/files": {
+            "format": " ",
+            "on-click": "rofi -show filebrowser"
         },
 
         "hyprland/workspaces": {
@@ -43,7 +48,7 @@
         },
 
         "tray": {
-            "icon-size": 25,
+            "icon-size": 18,
             "spacing": 2
         },
         "clock": {
@@ -76,10 +81,10 @@
 
         "temperature": {
             "thermal-zone": 2,
-            "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+            "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
             "critical-threshold": 80,
-            "format": "{icon}\n{temperatureC}",
-            "format-icons": ["󰼩", "󱩱", "󰼷"]
+            "format": "{icon}\n{temperatureC}°C",
+            "format-icons": [" 󰼩 ", " 󱩱 ", " 󰼷 "]
         },
         "backlight": {
             "device": "acpi_video1",
@@ -114,9 +119,11 @@
         "pulseaudio": {
             "scroll-step": 1, // %, can be a float
 	        "on-click": "exec pavucontrol",
+            "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
             "ignored-sinks": ["Easy Effects Sink"],
-            "format": "{icon}\n{volume}",
-            "format-bluetooth": "󰥰\n{volume}",
+            "format": "{icon}\n{volume}%",
+            "format-bluetooth": "󰥰\n{volume}%",
+            "format-muted": "󰖁",
             "format-icons": {
                 "headphone": "",
                 "hands-free": "",
@@ -124,7 +131,7 @@
                 "phone": "",
                 "portable": "",
                 "car": "",
-                "default": ["", "", "", "󱄡"]
+                "default": [" 󰕿", " 󰖀", " 󰕾"]
             }
 
         },
@@ -133,7 +140,7 @@
             "all-outputs": true,
                 "sort-by-app-id": true,
                 "format": "{icon}",
-                "icon-size": 30,
+                "icon-size": 16,
                 //"icon-theme": "Numix-Circle",
                 "tooltip-format": "{title}",
                 "on-click": "activate",
@@ -141,26 +148,31 @@
                 "on-click-middle": "close"
             },
     
-            "cpu": {
+            "cpu#graph": {
                 "interval": 1,
                 "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
                 "min-length": 0,
                 "rotate": 270,
                 "format-icons": [
-                     "<span color='#69ff94'>▁</span>", // green
-                     "<span color='#2aa9ff'>▂</span>", // blue
-                     "<span color='#f8f8f2'>▃</span>", // white
-                     "<span color='#f8f8f2'>▄</span>", // white
-                     "<span color='#ffffa5'>▅</span>", // yellow
-                     "<span color='#ffffa5'>▆</span>", // yellow
-                     "<span color='#ff9977'>▇</span>", // orange
-                     "<span color='#dd532e'>█</span>"  // red
+                     "<span color='#a6e3a1'>▁</span>", // green
+                     "<span color='#74c7ec'>▂</span>", // blue
+                     "<span color='#f5c2e7'>▃</span>", // white
+                     "<span color='#f5c2e7'>▄</span>", // white
+                     "<span color='#f9e2af'>▅</span>", // yellow
+                     "<span color='#f9e2af'>▆</span>", // yellow
+                     "<span color='#fab387'>▇</span>", // orange
+                     "<span color='#f38ba8'>█</span>"  // red
                 ]
            },
 
+           "cpu#percent": {
+            "interval": 1,
+            "format": "     \n {avg_frequency:3}\n {usage:2}%"
+        },
+
            "memory": {
-            "interval": 30,
-            "format": " \n{percentage}"
+            "interval": 2,
+                "format": "  󰘚\n {percentage}%\n {used:2}\n{total:02}"
         },
 
         "group/group-power": {
@@ -178,22 +190,22 @@
             ]
         },
         "custom/quit": {
-            "format": "󰗼",
+            "format": "󰗼 ",
             "tooltip": false,
             "on-click": "hyprctl dispatch exit"
         },
         "custom/lock": {
-            "format": "󰍁",
+            "format": "󰍁 ",
             "tooltip": false,
             "on-click": "swaylock"
         },
         "custom/reboot": {
-            "format": "󰜉",
+            "format": "󰜉 ",
             "tooltip": false,
             "on-click": "reboot"
         },
         "custom/power": {
-            "format": "󰐥",
+            "format": "󰐥 ",
             "tooltip": false,
             "on-click": "shutdown now"
         },
@@ -214,27 +226,27 @@
             ]
         },
         "custom/startvm": {
-            "format": "",
+            "format": " ",
             "tooltip": false,
             "on-click": "virsh --connect qemu:///system start 'win11'"
         },
         "custom/viewvm": {
-            "format": "",
+            "format": " ",
             "tooltip": false,
             "on-click": "virt-viewer -c qemu:///system 'win11'"
         },
         "custom/lookingglass": {
-            "format": "󱇽",
+            "format": "󱇽 ",
             "tooltip": false,
             "on-click": "looking-glass-client"
         },
         "custom/virtmanager": {
-            "format": "",
+            "format": " ",
             "tooltip": false,
             "on-click": "virt-manager"
         },
         "custom/shutdownvm": {
-            "format": "",
+            "format": " ",
             "tooltip": false,
             "on-click": "virt --connect qemu:///system shutdown 'win11'"
         }
@@ -243,14 +255,14 @@
     
     {
         "layer": "top", // Waybar at top layer
-        "output": ["DP-1", "DP-3"],
+        "output": ["DP-4", "DP-3"],
         "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 20, // Waybar height (to be removed for auto height)
+        "height": 10, // Waybar height (to be removed for auto height)
         "width": 1080, // Waybar width
         "spacing": 8, // Gaps between modules (4px)
         // Choose the order of the modules
         "modules-left": ["custom/apps","hyprland/workspaces" ],
-        "modules-center": ["wlr/taskbar"],
+        "modules-center": ["wlr/taskbar#sides"],
         "modules-right": ["clock"],
         //Modules configuration
 
@@ -285,7 +297,7 @@
 
 
         "custom/apps": {
-            "format": "   ",
+            "format": " 󰣇",
             "on-click": "sleep 0.1 && rofi -show drun"
         },
 
@@ -298,42 +310,18 @@
             
             },
 
-        "wlr/taskbar": {
-	    "all-outputs": true,
-            "sort-by-app-id": true,
-            "format": "  {icon}  ",
-            "icon-size": 50,
-            "icon-theme": "Numix-Circle",
-            "tooltip-format": "{title}",
-            "on-click": "activate"
-        }
-        
-    },
-
-    {
-        "layer": "top", // Waybar at top layer
-        "output": ["DP-1", "DP-3"],
-        "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 20, // Waybar height (to be removed for auto height)
-        "width": 1080, // Waybar width
-        "spacing": 8, // Gaps between modules (4px)
-        // Choose the order of the modules
-        "modules-left": [],
-        "modules-center": ["hyprland/window"],
-        "modules-right": [],
-        //Modules configuration
-        "hyprland/window": {
-            "format": "{}",
-            "max-length": 140,
-            "rewrite": {
-                "(.*) — Mozilla Firefox": "🌎 $1"
-            },
-            "separate-outputs": true
-        }
+        "wlr/taskbar#sides": {
+            "all-outputs": false,
+                "sort-by-app-id": true,
+                "format": "{icon} {name}",
+                "icon-size": 30,
+                //"icon-theme": "Numix-Circle",
+                "tooltip-format": "{title}",
+                "on-click": "activate",
+                "on-click-right": "fullscreen",
+                "on-click-middle": "close"
+            }
         
     }
-
-
-
 
 ]
