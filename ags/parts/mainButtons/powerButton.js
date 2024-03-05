@@ -1,10 +1,10 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import App from 'resource:///com/github/Aylur/ags/app.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
 
 const Power = () => Widget.Button({
     className: 'power',
-    onClicked: () =>  App.openWindow('powermenu'),
+    onClicked: () =>  Utils.execAsync(['bash', '-c', 'rofi -show power-menu -modi power-menu:rofi-power-menu']),
     child: Widget.Label({
         label: '',
     }),

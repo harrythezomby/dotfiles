@@ -1,10 +1,10 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import App from 'resource:///com/github/Aylur/ags/app.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
 
 const Apps = () => Widget.Button({
     className: 'apps',
-    onClicked: () =>  App.toggleWindow('applauncher'),
+    onClicked: () =>  Utils.execAsync(['bash', '-c', 'rofi -show drun']),
     child: Widget.Label({
         label: '󰣇',
     }),

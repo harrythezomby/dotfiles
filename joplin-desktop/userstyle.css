@@ -38,7 +38,7 @@
 body {
     --primary: var(--yellow);
     --secondary: var(--razzmatazz);
-    --background2: #BBB;
+    --background2: #2c2f36;
     --text: #989ca5;
     --headers: #a3a0c9;
     --comment: #515d79;
@@ -78,17 +78,6 @@ ol{
     margin-bottom: 0;
 }
 
-/* RENDERED CONTENT PADDING */
-#rendered-md {
-    padding: 5%;
-    /* render auto-column layout */
-    column-count: auto;
-    column-width: 30rem;
-    column-gap: 2rem;
-    column-rule-color: var(--secondary);
-    column-rule-style: dashed;
-    column-rule-width: 2px;
-}
 
 .resource-icon { width: 1.2em; height: 1.2em; }
 .fa-joplin {
@@ -315,21 +304,6 @@ mark {
         color: #bbb;
         font-style: italic;
     }
-    body {
-        font-family: 'Noto Sans JP', sans;
-        background: white;
-        -webkit-print-color-adjust: exact !important;
-        filter: grayscale(1);
-        /* render auto-column layout */
-        column-count: 2;
-        /* column-width: 15rem; */
-        column-gap: 1rem;
-        column-rule-color: #ddd;
-        column-rule-style: dashed;
-        column-rule-width: 1px;
-    }
-
-    #rendered-md{padding: 0 !important;margin: 0 !important;}
 
     hr{
         margin-left: 0;
@@ -387,18 +361,6 @@ mark {
         line-height: 1.5em !important;
     }
 
-    table,
-    pre {
-        page-break-inside: avoid
-    }
-
-    pre {
-        word-wrap: break-word
-    }
-
-    .footnotes-sep {
-        border-bottom: 2px dashed var(--block-print) !important
-    }
 
     blockquote {
         color: #111;

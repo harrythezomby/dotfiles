@@ -125,11 +125,6 @@ window > box {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.notification image {
-    color: white;
-    margin-left: 1em;
-}
-
 .volume {
     padding: 0 6px;
     margin-right: 10px;
@@ -188,328 +183,34 @@ window > box {
     text-shadow: 0 0 3px black;
 }
 
-.fan {
-    padding: 0 6px;
-    margin-left: 15px;
-    border-radius: 5px;
-    color: white;
-    background-image: linear-gradient(to right, #cc208e 0%, #6713d2 100%);
-    text-shadow: 0 0 3px black;
-}
-
-progress, highlight {
-    background-color: aqua;
-    min-height: 8px;
-}
-
-/* Notification Center */
-
-#notification-center {
-    background-color: #232323;
-}
-
-#popup-window .notification > * {
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
-    padding: 0px;
-    margin: 10px;
-    min-width: 500px;
-    border-radius: 20px;
-}
-
-#popup-window *,
-#notification-center *{
-    outline: none;
-    color: white;
-}
-
-
-
-.notification > * {
-    margin: 0px;
-    min-width: 0px;
-    min-height: 0px;
-    border-radius: 25px;
-}
-
-.notification .icon {
-    margin: 10px;
-    border-radius: 7px;
-    margin-right: 8px;
-    padding: 0px;
-    color: aqua;
-}
-
-.notification .close-button {
-    margin: 10px;
-    padding-left: 0px;
-    padding-right: 14px;
-    min-height: 2.8em;
-    min-width: 2.8em;
-    border-radius: 50px;
-    background-color: transparent;
-}
-
-.tray {
-    margin-right: 10px;
-
-}
-
-.dockbuttons,
-.vmButtons,
-.powermenuButtons,
-.applauncherclose,
-.notificationButton,
-.notificationcenterclosebutton,
-.action-button,
-.notification .close-button,
 .tray button {
-    min-width: 30px;
-    min-height: 30px;
-    margin-right: 10px;
-    border-radius: 20px;
+    margin-left: 10px;
+    padding: 0 6px;
+    border-radius: 0px;
+    
     background: transparent;
-    border: 2px solid transparent;
     
 }
 
-.dockbuttons:hover,
-.dockbuttons:focus,
-.applauncherclose:hover,
-.applauncherclose:focus,
-.tray button:hover,
-.tray button:focus,
-.notificationButton:hover,
-.notificationButton:focus,
-.notificationcenterclosebutton:hover,
-.notificationcenterclosebutton:focus,
-.action-button:hover,
-.action-button:focus,
-.applauncherbuttons:hover,
-.applauncherbuttons:focus,
-.applauncherentries:focus,
-.applauncherentries:focus,
-.powermenuButtons:hover,
-.powermenuButtons:focus,
-.vmButtons:hover,
-.vmButtons:focus,
-.notification .close-button:hover {
-
-/*     min-height: 4em;
-    min-width: 4em; */
-/*     background: linear-gradient(rgba(255, 255, 255, 0.215), rgba(255, 255, 255, 0.205)) padding-box,
-              linear-gradient(to right, #6a11cb, #2575fc) border-box; */
-              
-        color: #005bea;
-        background: transparent;
-        border: 2px solid #005bea;
-}
-
-.notificationcenterclosebutton {
+.tray {
     background-color: transparent;
-}
-
-
-.largetitle {
-    font-family: Arimo Nerd Font;
-    margin: 10px;
-    font-size: 50px;
-}
-
-.mediumtitle {
-    font-family: Arimo Nerd Font;
-    margin: 10px;
-    font-size: 30px;
-}
-
-.smalltitle {
-    font-family: Arimo Nerd Font;
-    font-weight: normal;
-    margin: 10px;
-    font-size: 20px;
-}
-
-.smallertitle {
-    font-family: Arimo Nerd Font;
-    font-weight: normal;
-    margin: 10px;
-    font-size: 15px;
-}
-
-.tinytitle {
-    font-family: Arimo Nerd Font;
-    margin: 10px;
-    font-size: 10px;
-}
-
-.notification .title {
-    font-size: 1.1em;
-    padding: 0px;
-}
-
-.notification .description {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.notificationScrollable {
-    min-height: 550px;
-}
-
-.notificationCenterWindow {
-    min-height: 100px;
-}
-
-.list {
-    padding: 1px;
-    margin: 0px;
-    background-color: transparent;
-}
-
-.action-button {
-    margin: 0 4px;
-    padding: 0px;
-}
-
-.action-button:first-child {
-    margin-left: 0;
-}
-
-.action-button:last-child {
-    margin-right: 0;
-}
-
-.action-button:last-child:first-child {
-    margin: 0;
-}
-
-.header {
-    padding: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.placeholder image {
-    font-size: 8em;
-}
-
-.placeholder label {
-    font-size: 1.4em;
-}
-
-.notificationbuttonalert {
-    background-color: transparent;
-    color: black;
-    padding: 0 0px;
-    margin: 0px;
-}
-
-.notificationCenterWindow {
-    margin-top: 10px;
-    background-color: transparent;
-    min-width: 500px;
-    border-radius: 20px;
-}
-
-.notificationCenterControls {
-    background-color: transparent;
+    margin-right: 10px;
 }
 
 .notibutton {
     padding: 0 6px;
-    padding-right: 9px;
-    background-color: #ff95ff;
+    background-color: #eeff8b;
+    color: black;
     
 }
 
-.notibuttondefaulticon {
-    color: black;
-}
-
-#popup-window,
-.notificationCenterWindowOuter,
-.powermenuwindow,
-.vmWindow,
-.applauncherwindow {
-    border-radius: 30px;
-/*     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) padding-box,
-              linear-gradient(to right, rgba(0, 0, 139, 0.416), rgba(153, 50, 204, 0.416)) border-box; */
-    background: rgba(14, 20, 22, 0.8);
-    border-radius: 20px;
-    border: 4px solid #1970E0;
-}
-
-.applaunchersecondwindow {
-    background: transparent;
-    border-radius: 10px;
-}
-
-.applauncherentries {
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-}
-
-.applaunchertitles {
-    margin-left: 15px;
-    color: white;
-    font-family: Arimo Nerd Font;
-}
-
-.applauncherdescriptions {
-    margin-left: 15px;
-    font-size: 12px;
-    font-weight: normal;
-    font-family: Arimo Nerd Font;
-}
-
-.applauncherbuttons {
-    background-color: transparent;
-    background: transparent;
-}
-
-.powermenuWindow {
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.801);
-}
-
-.powermenuTitles,
-.vmTitles {
-    font-family: Arimo Nerd Font;
-}
 
 
 
-.dockbuttons {
-    border-radius: 100px;
-    margin: 20px;
-    padding: 5px;
-    background: transparent;
-    border-radius: 100px;
-    border: 3px solid transparent;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)) padding-box,
-              linear-gradient(to right, #6a11cb, #2575fc) border-box;
-}
+
 
 .launchernonrunning {
     background-color: transparent;
     color: transparent;
 }
 
-.indicator {
-    min-width: 6px;
-    min-height: 6px;
-    background-color: aqua;
-    border-radius: 100px;
-    margin-bottom: 2px;
-}
-
-.single .indicator,
-.nonrunning .indicator {
-    background-color: transparent;
-}
-
-.floating-dock {
-    background-color: transparent;
-    color: transparent;
-}
-
-.box {
-    background-color: transparent;
-}

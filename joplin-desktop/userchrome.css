@@ -1,39 +1,9 @@
-/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
-
 :root {
-	--black-ish: #111;
-	--white-ish: #E0E0E0;
-	--dark-grey: #222;
-	--light-grey: #BBB;
-	--yellow: #d1b557;
-	--light-yellow: #ffeeb6;
-	--blue: #3185FC;
-	--red: #D00;
-	--green: #20CE88;
-	--razzmatazz: #4b5362;
+  --joplin-background-color3: #1D2024 !important;
+  --joplin-background-color-hover3: #0085ff !important;
+  --joplin-divider-color: #1D2024 !important;
+  --joplin-selected-color: #0085ff !important;
 
-	--header-size: 1rem;
-	--tiny: 0.2rem;
-	--tinyem: 0.2em;
-	--small: 0.5rem;
-	--smallem: 0.5em;
-	--lessthan-regular: 0.9rem;
-	--regular: 1.1rem;
-	--regular-em: 1.1em;
-	--morethan-regular: 1.3rem;
-	--morethan-regular-em: 1.3em;
-	--big: 1.6rem;
-	--big-em: 1.6em;
-	--bigger: 1.8rem;
-	--bigger-em: 1.8em;
-	--twice: 2.2rem;
-	--height: 3.1rem;
-	--mastodon: 4.4rem;
-	--margin: 6.5rem;
-	--trans: .5s;
-	--quicktrans: .1s;
-
-	--primary: var(--yellow);
 	--headers: #8f97a7;
 	--main: #282c34;
 	--dark-main: #252930;
@@ -54,238 +24,88 @@
 	--separator: #4d5b72;
 	--tokens: #a683bd;
 	--comment: #96acce;
+
 }
 
-* {
-	border: 0 !important;
-	/* remove all borders, they're ugly */
-	/*	font: 1.1em Helvetica */
-	/* it doesn't work nicely */
-	/* font-family: Helvetica */
+.xknTJ {
+  background-color: #1D2024 !important;
 }
 
-#react-root>div>div {
-	background: var(--main) !important;
+.eRwGUD {
+  background-color: #1D2024 !important;
 }
 
-.title-input {
-	background-color: var(--main) !important;
+.dtFiFQ {
+    border: none;
+    background-color: #0085ff !important;
 }
 
-.kYItFT>input {
-	background: var(--main) !important;
+.rGEbE {
+    border: 1px solid #0085ff !important;
+    background-color: #1D2024 !important;
 }
 
-/* change selection color (it appears darker than it should) */
-::selection {
-	background: #f8ff9144 !important;
+.rGEbE .sc-aXZVg {
+    color: #0085ff !important;
 }
 
-/* remove notes separator in list */
-.note-list *::before {
-	border-bottom: none !important;
+.rGEbE .sc-fqkvVR {
+    color: #0085ff !important;
 }
 
-.item-list.note-list {
-	background: var(--dark-main) !important;
+.hzUGcv {
+  border: 1px solid #0085ff !important;
 }
 
-.rli-sideBar {
-	background: var(--dark-main) !important;
+.fRueuA {
+  color: #0085ff !important;
 }
 
-.resizableLayoutItem.rli-editor div div div div:nth-child(2),
-.resizableLayoutItem.rli-editor div div div div:nth-child(3) {
-	padding-left: 0 !important;
+.edjcDi {
+  background: #0085ff !important;
 }
 
-/* Folders sidebar background */
-.bHqyGr {
-	background: var(--dark-main) !important
+.izrMvb {
+  background: #0085ff !important;
 }
 
-.note-count-label{
-	color: var(--white-ish) !important;
+.eibLdd {
+  background: #0085ff !important;
 }
 
-/* highlight in yellow hovered and selected notes and notebooks */
-.list-item-container:hover,
-.list-item-container:hover .title,
-.list-item-container:hover .note-count,
-.notes .note-list-item *:hover .checkbox,
-.notes .note-list-item *:hover,
-.notes .note-list-item *:focus,
-.notes .note-list-item *:active {
-	background-color: var(--primary) !important;
-	color: #222 !important;
-}
-
-/* Folders Selection */
-
-.all-notes:checked {
-	background-color: var(--dark-main-selected) !important;
-}
-
-.list-item-container.selected {
-	background-color: var(--dark-main-selected) !important;
-}
-
-.list-item-container.selected a,
-.list-item-container.selected .note-count-label {
-	color: var(--dark-grey) !important;
-}
-
-.sidebar {
-	background: var(--main) !important;
-}
-
-.resizableLayoutItem {
-	background: var(--main) !important
-}
-
-/* Notes Selection */
-.notes .note-list-item .-selected,
-.notes .note-list-item .-selected *,
-.notes .note-list-item .-selected .checkbox{
-	background-color: var(--dark-main-selected) !important;
-	color: #222 !important;
-}
-
-.selected.note-list-item a {
-	color: var(--dark-grey) !important;
-}
-
-.rli-noteList div div div {
-	background-color: var(--dark-main) !important
-}
-
-/* create buttons */
-.new-todo-button,
-.new-note-button,
-.sort-order-field-button,
-.sort-order-reverse-button {
-	background: var(--main) !important;
-}
-
-.new-todo-button span,
-.new-note-button span,
-.sort-order-field-button span,
-.sort-order-reverse-button span {
-	color: var(--primary) !important;
+.gXcbDC {
+  background: #0085ff !important;
 }
 
 .editor-toolbar {
-	background: none !important
+  background-color: #1D2024 !important;
 }
 
-/* search icon */
-.icon-search {
-	color: var(--primary) !important
+.gRlcnJ {
+  color: #0085ff;
 }
 
-/* X icon */
-.fa-times {
-	color: var(--primary) !important
+.dEZmvG {
+  color: #0085ff;
 }
 
-
-
-/* tags in tags editor */
-.css-8hn3v4-multiValue,
-.css-8hn3v4-multiValue * {
-	background: var(--primary) !important;
-	color: #222 !important;
-	text-transform: uppercase;
-	font-weight: bold;
-	border-radius: 5px !important
+.iTdchv {
+  color: #0085ff;
 }
 
-/* tags at the bottom of the page */
-.tag-list span {
-	color: #222 !important;
-	background: var(--primary) !important;
-	text-transform: uppercase;
-	font-weight: bold;
-	border-radius: 5px !important
+.dWsKKS {
+  color: #0085ff;
 }
 
-/* "x" when typing in search bar*/
-.fCCgEl {
-	color: var(--primary) !important
-}
-
-/* Fixes a display bug where the last few letters of a full-width line can't be seen */
-.CodeMirror-lines {
-	/* width: 96% !important */
-	width: 90% !important;
-	margin: auto !important;
-	padding-right: 15px !important;
-}
-
-.codeMirrorEditor {
-	background: var(--main) !important
-}
-
-/* style links in pop-up windows */
-.note-property-box a {
-	color: var(--primary) !important
-}
-
-/* use mono font when editing stuff in popup windows */
-input.form-control {
-	font: 1.1em "Ubuntu Mono", "Fira Code", mono !important
+.editor-toolbar .button, .header .button {
+  border: 0px solid rgb(43 43 43);
 }
 
 
-/* Based on arcticicestudio's Nord theme */
-/* https://github.com/arcticicestudio/nord */
 
 
 
-.cm-s-material-darker.CodeMirror {
-	background: #2e3440;
-	/* color: #c9c9c9; */
-	color: #b3b4b4 !important;
-}
 
-.cm-s-material-darker div.CodeMirror-selected {
-	background: #434c5e !important;
-	max-width: 100% !important;
-    /* margin: auto -.5rem !important; */
-}
-
-.cm-s-material-darker .CodeMirror-line::selection,
-.cm-s-material-darker .CodeMirror-line>span::selection,
-.cm-s-material-darker .CodeMirror-line>span>span::selection {
-	background: #3b4252;
-}
-
-.cm-s-material-darker .CodeMirror-line::-moz-selection,
-.cm-s-material-darker .CodeMirror-line>span::-moz-selection,
-.cm-s-material-darker .CodeMirror-line>span>span::-moz-selection {
-	background: #3b4252;
-}
-
-.cm-s-material-darker .CodeMirror-gutters {
-	background: #2e3440;
-	border-right: 0px;
-}
-
-.cm-s-material-darker .CodeMirror-guttermarker {
-	color: #4c566a;
-}
-
-.cm-s-material-darker .CodeMirror-guttermarker-subtle {
-	color: #4c566a;
-}
-
-.cm-s-material-darker .CodeMirror-linenumber {
-	color: #4c566a;
-}
-
-.cm-s-material-darker .CodeMirror-cursor {
-	border-left: 1px solid #f8f8f0 !important;
-}
 
 
 /* Normal Text */
@@ -422,101 +242,4 @@ span.cm-comment.cm-variable-2 {
 
 .cm-s-material-darker .cm-url.cm-rm-link {
 	color: var(--links) !important;
-}
-
-/* url dark url for windows */
-.cm-s-material-darker .cm-string.cm-url {
-	color: var(--links) !important;
-}
-
-/* Links Text*/
-.cm-s-material-darker span.cm-link-text {
-	color: var(--link-text) !important;
-}
-
-/* Image file name */
-.cm-s-material-darker .cm-image {
-	color: var(--image-text) !important;
-}
-
-/* Checkboxes */
-.cm-s-material-darker .cm-variable-2.cm-rm-list-token {
-	color: var(--tokens) !important;
-}
-
-/* Comment outside code block */
-pre.CodeMirror-line span.cm-comment {
-	color: var(--comment) !important;
-}
-div.CodeMirror span.cm-comment.cm-jn-inline-code {
-	background-color: #313a44 !important;
-	padding-right: 0 !important;
-  	padding-left: 0 !important;
-}
-div.CodeMirror span.cm-comment.cm-jn-inline-code.CodeMirror-selectedtext {
-	background-color: var(--yellow)!important;
-    color: var(--dark-grey) !important;
-	margin-left: -1px;
-    margin-right: -1px;
-}
-
-/* Comment inside code block */
-pre.cm-jn-code-block span.cm-comment.cm-jn-monospace {
-	color: #426c7d !important;
-	font-style: italic !important;
-}
-pre.cm-jn-code-block span.cm-comment.cm-jn-monospace.CodeMirror-selectedtext {
-	color: var(--comment) !important;
-}
-
-
-span.cm-hr {
-	color: var(--separator) !important;
-	font-family: monospace !important;
-	letter-spacing: 1em !important;
-}
-
-.cm-s-material-darker span.cm-error {
-	background: #bf616a;
-	color: #f8f8f0;
-}
-
-.cm-s-material-darker .CodeMirror-activeline-background {
-	background: #3b4252;
-}
-
-.cm-s-material-darker .CodeMirror-matchingbracket {
-	text-decoration: underline;
-	color: white !important;
-}
-
-/* Background code block */
-.CodeMirror div.cm-jn-code-block {
-	background-color: #2d353c !important;
-}
-
-div.CodeMirror div.cm-jn-code-block-background {
-    background-color: #2d353c !important; /* #2f3031 */
-    margin: 0 -.5rem;
-}
-
-/* for ==highlight== */
-span.cm-rm-highlight{
-	color: var(--dark-grey) !important;
-}
-span.cm-header.cm-rm-highlight{
-	color: var(--dark-grey) !important;
-}
-
-@media (max-width: 800px) {
-
-	.kYItFT {
-		flex-direction: row !important;
-		align-items: flex-start;
-	}
-
-	.kMMyuz {
-		border-top: 1px solid #555555;
-		width: auto !important;
-	}
 }

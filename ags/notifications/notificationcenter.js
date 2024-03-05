@@ -42,6 +42,7 @@ const seperatorHeader = () => Widget.Box({
 });
 
 const NotificationCenter = () => Widget.Window({
+    exclusivity: 'exclusive',
     name: WINDOW_NAME,
     className: 'notificationCenterWindowOuter',
     visible: false,
