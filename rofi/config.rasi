@@ -1,11 +1,3 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Configuration For Rofi Version: 1.7.3
- **/
-
 configuration {
 	/*---------- General setting ----------*/
 	modi: "drun,run,filebrowser,window";
@@ -16,9 +8,8 @@ configuration {
 	normalize-match: true;
 	show-icons: true;
 	icon-theme: "Reversal-blue-dark";
-/*	cache-dir: ;*/
 	steal-focus: false;
-/*	dpi: -1;*/
+
 
 	/*---------- Matching setting ----------*/
 	matching: "normal";
@@ -61,11 +52,6 @@ configuration {
 	window-format: "{w} - {c} - {t:0}";
 	window-thumbnail: false;
 
-	/*---------- Combi settings ----------*/
-/*	combi-modi: "window,run";*/
-/*	combi-hide-mode-prefix: false;*/
-/*	combi-display-format: "{mode} {text}";*/
-
 	/*---------- History and Sorting ----------*/
 	disable-history: false;
 	sorting-method: "normal";
@@ -87,12 +73,9 @@ configuration {
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
-/*	ignored-prefixes: "";*/
-/*	pid: "/run/user/1000/rofi.pid";*/
 
 	/*---------- File browser settings ----------*/
     filebrowser {
-/*	  directory: "/home";*/
       directories-first: true;
       sorting-method:    "name";
     }
@@ -179,11 +162,5 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-
-//@theme "/home/harija/.local/share/rofi/themes/simple-tokyonight.rasi"
-
-//@theme "/home/harija/.local/share/rofi/themes/rounded-blue-dark.rasi"
-
-//@theme "/home/harija/.local/share/rofi/themes/windows11-grid-dark.rasi"
 
 @theme "/home/harija/.local/share/rofi/themes/rounded-blue-dark.rasi"
