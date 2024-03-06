@@ -98,12 +98,81 @@
 }
 
 .cqlwYH {
-  color: #0085ff !important;
+  background: #0085ff !important;
 }
 
+/* Notebook Hover Buttons, All-1-2-3-4 Position in Order */
+.dIykJs:hover {
+    background-color: #3b3b3b42 !important;
+}
+
+.fdNGI:hover {
+    background-color: #3b3b3b42 !important;
+}
+
+.ecmWRF:hover {
+    background-color: #3b3b3b42 !important;
+}
+
+.kJAKXD:hover {
+    background-color: #3b3b3b42 !important;
+}
+
+.iTsWTZ:hover {
+    background-color: #3b3b3b42 !important;
+}
+
+/*
+Notebook Backgrounds All-1-2-3-4 Position in Order 
+.fdNGI {
+  background: #d0f4de !important;
+}
+
+.edjcDi {
+  background: #fcf6bd !important;
+}
+
+.ecmWRF {
+  background: #a9def9 !important;
+}
+
+.kJAKXD {
+  background: #ff99c8 !important;
+}
+
+.iTsWTZ {
+  background: #e4c1f9 !important;
+} 
+*/
+
+/* Notebook and tags background 
+.eENMOW {
+  background: white;
+}
+*/
+
+  /* Background of sidebar */
+.xknTJ {
+    background: linear-gradient(45deg, hsl(165,64%,69%),hsl(255,64%,69%),hsl(345,64%,69%),hsl(75,64%,69%));
+}
+
+
+/*
 .editor-toolbar .button, .header .button {
   border: 0px solid rgb(43 43 43) !important;
 }
+
+.joplin-tinymce .tox-toolbar__group {
+    background-color: #1D2024;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.joplin-tinymce .tox .tox-toolbar__primary {
+    background: none;
+    background-color: #1d2024 !important;
+}
+*/
 
 
 
