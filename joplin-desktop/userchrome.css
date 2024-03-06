@@ -82,23 +82,27 @@
 }
 
 .gRlcnJ {
-  color: #0085ff;
+  color: #0085ff !important;
 }
 
 .dEZmvG {
-  color: #0085ff;
+  color: #0085ff !important;
 }
 
 .iTdchv {
-  color: #0085ff;
+  color: #0085ff !important;
 }
 
 .dWsKKS {
-  color: #0085ff;
+  color: #0085ff !important;
+}
+
+.cqlwYH {
+  color: #0085ff !important;
 }
 
 .editor-toolbar .button, .header .button {
-  border: 0px solid rgb(43 43 43);
+  border: 0px solid rgb(43 43 43) !important;
 }
 
 
