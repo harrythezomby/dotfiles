@@ -156,6 +156,24 @@ Notebook Backgrounds All-1-2-3-4 Position in Order
     background: linear-gradient(45deg, hsl(165,64%,69%),hsl(255,64%,69%),hsl(345,64%,69%),hsl(75,64%,69%));
 }
 
+.rMfzC {
+    border: none;
+    background-color: #0085ff;
+}
+
+.bGQwjq {
+    border: 1px solid #3b74df;
+    background-color: #1D2024;
+}
+
+.bGQwjq .sc-aXZVg {
+    color: #0085ff;
+}
+
+.bGQwjq .sc-fqkvVR {
+    color: #0085ff;
+}
+
 
 /*
 .editor-toolbar .button, .header .button {

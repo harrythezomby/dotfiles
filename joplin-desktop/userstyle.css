@@ -219,7 +219,7 @@ a[data-resource-id]:hover {
 .code,
 code,
 pre {
-    font-family: "Fira Code" !important;
+    font-family: "Iosevka NF" !important;
     font-size: var(--lessthan-regular);
     break-inside: avoid;
 }
