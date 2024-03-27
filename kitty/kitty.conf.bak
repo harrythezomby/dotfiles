@@ -5,7 +5,7 @@ term xterm-256color
 
 
 # BEGIN_KITTY_THEME
-# Lavandula
+# shadotheme
 include current-theme.conf
 # END_KITTY_THEME
 
