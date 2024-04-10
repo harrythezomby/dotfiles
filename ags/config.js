@@ -2,6 +2,9 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
+// GDK
+import Gdk from "gi://Gdk"
+
 // Bar main buttons
 import Power from './parts/mainButtons/powerButton.js'
 import Apps from './parts/mainButtons/appsButton.js'
@@ -90,11 +93,5 @@ export default {
         Bar({ monitor: 0 }),
         Bar({ monitor: 1 }),
         Bar({ monitor: 2 }),
-
-/*         applauncher,
-        power,
-        vmmenu,
-        testing,
-        notificationpopup, */
     ],
 };
