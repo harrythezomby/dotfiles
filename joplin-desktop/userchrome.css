@@ -197,11 +197,10 @@ Notebook Backgrounds All-1-2-3-4 Position in Order
     color: #0085ff !important;
 }
 
-/* Inactive note bg lighter grey, kind of a bandaid fix but whatever */
+/* Inactive note bg lighter grey, kind of a bandaid fix but whatever (welp, messed this up but fixed now) */
 .DnUmE {
-    background-color: #2e31382e !important;
+    background-color: #1d2024 !important;
 }
-
 /*
 .editor-toolbar .button, .header .button {
   border: 0px solid rgb(43 43 43) !important;
