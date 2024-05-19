@@ -24,6 +24,7 @@ $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
 [ ](fg:#33658A)\
+$cmd_duration\
 \n$username\
   \
 """
@@ -138,5 +139,9 @@ time_format = "%r" # Hour:Minute Format
 use_12hr = true
 style = "bg:#33658A"
 format = '[  $time ]($style)'
+
+[cmd_duration]
+min_time = 2_000
+show_milliseconds = true
 
 
