@@ -5,7 +5,7 @@ term xterm-256color
 
 
 # BEGIN_KITTY_THEME
-# shadotheme
+# 1984 Dark
 include current-theme.conf
 # END_KITTY_THEME
 
