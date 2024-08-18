@@ -80,7 +80,7 @@
             },
             "bypass": false,
             "input-gain": 0.0,
-            "output-gain": -3.1
+            "output-gain": -3.0
         },
         "equalizer#0": {
             "balance": 0.0,
@@ -326,8 +326,8 @@
             "bypass": false,
             "dithering": "None",
             "external-sidechain": false,
-            "gain-boost": false,
-            "input-gain": 0.0,
+            "gain-boost": true,
+            "input-gain": -15.0,
             "lookahead": 5.0,
             "mode": "Herm Thin",
             "output-gain": 0.0,
