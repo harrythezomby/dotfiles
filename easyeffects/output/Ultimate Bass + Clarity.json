@@ -256,7 +256,7 @@
             "harmonics": 8.5,
             "input-gain": 0.0,
             "output-gain": 0.0,
-            "scope": 3500.0
+            "scope": 4000.0
         },
         "limiter#0": {
             "alr": false,
