@@ -4,7 +4,12 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+exec waybar
 exec copyq --start-server
+exec wlsunset -l 37.9989 -L 145.1744 #Melbourne
+exec swaync
+exec joplin-desktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland
+
 
 ### Variables
 #
@@ -29,12 +34,12 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-output eDP-1 resolution 1920x1080 position 0,0
-output eDP-1 scale 1.25
+output eDP-1 {
+    resolution 1920x1080
+    position 0,0
+    scale 1.25
+  } 
 
-set $display1 "AU Optronics 0x522D Unknown"
-set $display1-touch "1386:18576:Wacom_HID_4890_Finger"
-input $display1-touch map_to_output $display1
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -51,19 +56,19 @@ input $display1-touch map_to_output $display1
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
+### Input
 input type:touchpad {
 	tap enabled
+  scroll_factor 0.3
 }
 
 bindgesture swipe:right workspace next
 bindgesture swipe:left workspace prev
 
-input type:keyboard repeat_delay 200
-input type:keyboard repeat_rate 50
+input type:keyboard {
+    repeat_delay 200
+    repeat_rate 50
+  }
 
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -81,6 +86,14 @@ input type:keyboard repeat_rate 50
 
     # Start your launcher
     bindsym $mod+r exec $menu
+
+    bindsym $mod+e exec "dolphin"
+
+    bindsym $mod+Shift+n exec swaync-client -t -sw
+
+    bindsym $mod+Shift+w exec "pkill waybar && waybar -c /home/harija/.config/waybar/elitebook/config -s /home/harija/.config/waybar/elitebook/style.css"
+
+    titlebar_padding 1
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -145,6 +158,24 @@ input type:keyboard repeat_rate 50
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+
+
+#FN Hotkeys
+bindsym XF86RotateWindows exec layoutmsg orientationnext
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioRaiseVolume exec pamixer -i 2
+bindsym XF86AudioLowerVolume exec pamixer -d 2
+bindsym XF86AudioMicMute exec pactl set-source-mute 2 toggle && notify-send "Mic Toggled"
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+bindsym  XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+
+
 #
 # Layout stuff:
 #
@@ -157,7 +188,7 @@ input type:keyboard repeat_rate 50
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+tab layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -205,24 +236,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+tab mode "resize"
+bindsym $mod+z mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 include /etc/sway/config.d/*
