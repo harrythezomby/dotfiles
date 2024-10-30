@@ -4,11 +4,11 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-exec waybar
+exec "waybar -c /home/harija/.config/waybar/elitebook/config -s /home/harija/.config/waybar/elitebook/style.css"
 exec copyq --start-server
 exec wlsunset -l 37.9989 -L 145.1744 #Melbourne
 exec swaync
-exec joplin-desktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland
+exec "joplin-desktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
 
 
 ### Variables
@@ -47,10 +47,10 @@ output eDP-1 {
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -106,7 +106,7 @@ input type:keyboard {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
