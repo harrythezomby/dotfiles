@@ -19,7 +19,7 @@ framerate = 200
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+; bars = 5
 ; bar_width = 2
 ; bar_spacing = 1
 # bar_height is only used for output in "noritake" format
@@ -38,13 +38,13 @@ framerate = 200
 # the bandwidth of the visualizer.
 # Note: there is a minimum total bandwidth of 43Mhz x number of bars.
 # Cava will automatically increase the higher cutoff if a too low band is specified.
-; lower_cutoff_freq = 50
-; higher_cutoff_freq = 10000
+lower_cutoff_freq = 10
+higher_cutoff_freq = 22050
 
 
 # Seconds with no input before cava goes to sleep mode. Cava will not perform FFT or drawing and
 # only check for input once per second. Cava will wake up once input is detected. 0 = disable.
-sleep_timer = 60
+sleep_timer = 300
 
 
 [input]
@@ -152,7 +152,7 @@ method = noncurses
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
 # set 'reverse' to 1 to display frequencies the other way around.
-; channels = stereo
+channels = mono
 ; mono_option = average
 ; reverse = 0
 
@@ -202,7 +202,7 @@ method = noncurses
 ; disable_blanking = 0
 
 # show a flat bar at the bottom of the screen when idle, 1 = on, 0 = off
-; show_idle_bar_heads = 1
+show_idle_bar_heads = 1
 
 # show waveform instead of frequency spectrum, 1 = on, 0 = off
 ; waveform = 1
