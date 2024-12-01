@@ -1,0 +1,133 @@
+
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    //"height": 5, // Waybar height (to be removed for auto height)
+    //"width": 5, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["memory", "cpu", "temperature", "upower"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [ "tray", "pulseaudio","idle_inhibitor", "power-profiles-daemon", "backlight", "network",  "clock"],
+    //Modules configuration
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+        "1": [
+            "DP-3" // workspace 1 shown on DP-3
+        ],
+        "2": [
+            "DP-1" // workspace 2 shown on DP-1
+        ],
+        "3": [
+            "DP-1" // workspace 3 shown on DP-1
+        ],
+        }
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "timezone": "Australia/Melbourne",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                            "months":     "<span color='#ffead3'><b>{}</b></span>",
+                            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                            }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+        "format": "Tmp:{temperatureC:3}°C",
+    },
+    "backlight": {
+        "format": "B/L:{percent:3}%",
+    },
+
+    "upower": {
+        "format": "Bat:{percentage:3}",
+        "tooltip-format": "{percentage} {time}",
+        "icon-size": 0,
+        "show-icon": false,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
+
+    "network": {
+        "interval": 60,
+        "format": "Wired",
+        "format-wifi": "Wi-Fi",
+        "format-alt": "{essid}",
+        "tooltip-format": "Net:{essid} LAN IP: {ipaddr} Gateway: {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Dscnt",
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "on-click-right": "exec pavucontrol",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "format": "Vol:{volume:3}%",
+        "format-muted": "Vol:Mute"
+
+    },
+
+    "cpu": {
+    "interval": 1,
+    "format": "CPU:{usage:3}%",
+    "on-click": "exec kitty btop"
+    },
+
+    "memory": {
+    "interval": 5,
+    "format": "Mem:{avail:0.1f}GiB",
+    "on-click": "exec kitty btop"
+    },
+
+    "power-profiles-daemon": {
+    "format": "Pwr:{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+    "default": "",
+    "performance": "Prf",
+    "balanced": "Bal",
+    "power-saver": "Eco"
+    }
+},
+
+    "idle_inhibitor": {
+    "format": "IdIn:{icon}",
+    "format-icons": {
+        "activated": "Y",
+        "deactivated": "N"
+    }
+    }
+
+}
+    
