@@ -1,15 +1,12 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: NotoMono Nerd Font Mono;
-    font-weight: 400;
-    font-size: 18px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    font-family: NotoSansM Nerd Font;
+    font-weight: 600;
 }
 
 /* Waybar Window */
 window#waybar {
-    background: rgba(0, 0, 0, 0.5);
+    background: #000000;
     color: #ffffff;
 }
 
@@ -28,15 +25,14 @@ button {
 #workspaces button {
     padding: 0 2px;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.3);
 }
 
 #workspaces button:hover {
-    background: rgba(238, 238, 238, 0.5);
+    background: rgba(238, 238, 238, 0.2);
 }
 
 #workspaces button.active {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #6c7086;
     color: #ffffff;
     box-shadow: inset 0 -2px #ffffff;
 }
@@ -44,6 +40,11 @@ button {
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
+
+
+/* Clock */
+
+
 
 /* Status Segments */
 #window,
@@ -59,18 +60,12 @@ button {
 #clock,
 #tray {
     padding-left: 15px;
-    padding-right: 15px;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-#tray {
-    background: transparent;
+    font-size: 15px;
 }
 
 #clock {
-    margin-left: 0px;
+    padding-right: 15px;
 }
 
 
