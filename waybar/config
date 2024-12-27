@@ -6,9 +6,9 @@
     //"width": 5, // Waybar width
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["cpu", "memory",  "temperature"],
+    "modules-left": ["cpu", "memory",  "temperature", "upower",],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": [ "tray","idle_inhibitor", "power-profiles-daemon",  "pulseaudio", "network", "backlight", "upower", "clock"],
+    "modules-right": [ "tray","idle_inhibitor", "power-profiles-daemon",  "pulseaudio", "network", "backlight", "clock"],
     //Modules configuration
 
     "hyprland/workspaces": {
@@ -68,12 +68,12 @@
     },
     "backlight": {
         //"device": "acpi_video1",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "B/L:{percent}%"
     },
 
     "upower": {
-        "format": "{percentage}",
+        "format": "Bat: {percentage}",
+        "show-icon": false,
         "icon-size": 18,
         "hide-if-empty": true,
         "tooltip": true,
