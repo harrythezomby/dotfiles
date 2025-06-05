@@ -6,9 +6,9 @@
     //"width": 5, // Waybar width
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/apps", "custom/power", "idle_inhibitor", "power-profiles-daemon", "group/audio", "hyprland/workspaces", "upower",],
+    "modules-left": ["custom/apps", "custom/power", "idle_inhibitor", "power-profiles-daemon", "group/audio", "backlight", "upower", "hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": [ "tray", "temperature", "memory",   "cpu", "network", "backlight", "clock"],
+    "modules-right": [ "tray", "temperature", "memory",   "cpu", "network", "clock"],
     //Modules configuration
 
     "cava": {
@@ -96,12 +96,13 @@
     },
     "backlight": {
         //"device": "acpi_video1",
-        "format": "B/L:{percent}%"
+        "format": "{icon} {percent:3}%",
+        "format-icons": [""]
     },
 
     "upower": {
-        "format": "Bat: {percentage}",
-        "show-icon": false,
+        "format": " {percentage:3}",
+        "show-icon": true,
         "icon-size": 18,
         "hide-if-empty": true,
         "tooltip": true,
