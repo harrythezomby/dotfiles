@@ -1,0 +1,156 @@
+
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 2, // Waybar height (to be removed for auto height)
+    //"width": 5, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["cpu", "memory",  "temperature", "upower",],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [ "tray","idle_inhibitor", "power-profiles-daemon",  "pulseaudio", "network", "backlight", "clock"],
+    //Modules configuration
+
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{name}",
+            "on-scroll-up": "hyprctl dispatch workspace e+1",
+            "on-scroll-down": "hyprctl dispatch workspace e-1",
+            "on-click": "activate"
+        },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 140,
+        "separate-outputs": false
+    },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 6
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%b %e}",
+        "timezone": "Australia/Melbourne",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                            "months":     "<span color='#ffead3'><b>{}</b></span>",
+                            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                            }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 80,
+        "format": "Tmp:{temperatureC:3}°C",
+        "format-icons": ["󰼩", "󱩱", "󰼷"]
+    },
+    "backlight": {
+        //"device": "acpi_video1",
+        "format": "B/L:{percent}%"
+    },
+
+    "upower": {
+        "format": "Bat: {percentage}",
+        "show-icon": false,
+        "icon-size": 18,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 60,
+        "format": "Net: {ifname}",
+        "format-wifi": "Wi-Fi",
+        "tooltip-format": "LAN IP: {ipaddr} Gateway: {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Dscnt",
+        "min-length": 1
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "on-click": "exec pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "format": "Vol:{volume:3}%",
+        "format-bluetooth": "󰥰 {volume:3}%",
+        "format-muted": "Vol: Mtd"
+
+    },
+
+    "cpu": {
+    "interval": 1,
+    "format": "Cpu:{usage:3}%",
+    "on-click": "exec kitty btop"
+    },
+
+    "memory": {
+    "interval": 5,
+    "format": "Ram:{percentage:3}%",
+    "on-click": "exec kitty btop"
+    },
+
+    "power-profiles-daemon": {
+    "format": "Pwr: {icon}",
+    "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+    "default": "Def",
+    "performance": "Prf",
+    "balanced": "Bal",
+    "power-saver": "Eco"
+    }
+},
+
+    "idle_inhibitor": {
+    "format": "Idl: {icon}",
+    "format-icons": {
+        "activated": "Act",
+        "deactivated": "Dct"
+    }
+    },
+
+    "custom/arrow" : {
+        "format": "",
+        "tooltip-format": "Tray Expander"
+    },
+
+    "group/tray": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "custom/arrow", // First element is the "group leader" and won't ever be hidden
+            "tray"
+        ]
+    },
+
+}
+    

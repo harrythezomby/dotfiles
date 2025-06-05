@@ -1,0 +1,88 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: NotoMono Nerd Font Mono;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* Waybar Window */
+window#waybar {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* Global Buttons */
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+
+/* Workspace Selector */
+#workspaces button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button:hover {
+    background: rgba(238, 238, 238, 0.5);
+}
+
+#workspaces button.active {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    box-shadow: inset 0 -2px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/* Status Segments */
+#window,
+#power-profiles-daemon,
+#idle_inhibitor,
+#network,
+#backlight,
+#pulseaudio,
+#temperature,
+#memory,
+#cpu,
+#upower,
+#clock,
+#tray {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+#tray {
+    background: transparent;
+}
+
+#clock {
+    margin-left: 0px;
+}
+
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+
+
+
