@@ -45,12 +45,16 @@
 
     "hyprland/window": {
         "format": "{}",
+        "window-rewrite-default": "Hyprland | Harija",
+        "rewrite": {
+        "": "Hyprland | Harija"
+        },
         "max-length": 140,
         "separate-outputs": false
     },
 
     "tray": {
-        "icon-size": 10,
+        "icon-size": 15,
         "spacing": 20
     },
 
