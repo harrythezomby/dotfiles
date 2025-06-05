@@ -1,10 +1,12 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: NotoMono Nerd Font Mono;
+    font-family: Iosevka Nerd Font Propo;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     padding-top: 0px;
     padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /* Waybar Window */
@@ -15,30 +17,31 @@ window#waybar {
 
 /* Global Buttons */
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    padding: 0px;
-    margin: 0px;
     border-radius: 0px;
 }
 
 
 /* Workspace Selector */
 #workspaces button {
-    padding: 0 2px;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.3);
+    min-height: 1px;
+    margin-left: 1px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: transparent;
+    min-width: 20px;
+    border: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background: rgba(238, 238, 238, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 #workspaces button.active {
-    background: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    box-shadow: inset 0 -2px #ffffff;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.70);
+    border: 2px solid aqua;
+    min-width: 40px;
 }
 
 #workspaces button.urgent {
@@ -47,32 +50,94 @@ button {
 
 /* Status Segments */
 #window,
+#audio,
 #power-profiles-daemon,
 #idle_inhibitor,
+#custom-apps,
+#custom-power,
 #network,
 #backlight,
-#pulseaudio,
 #temperature,
 #memory,
 #cpu,
 #upower,
 #clock,
 #tray {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
+    margin: 0 0px;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+
+
+
+#custom-power {
+    background-color: #be0062;
+}
+
+#custom-apps {
+    background-color: #008bf8;
+}
+
+#idle_inhibitor {
+    background-color: #682eb9;
+}
+
+#power-profiles-daemon {
+    background-color: #00b64c;
+}
+
+#audio {
+    padding-right: 0px;
+}
+
+#cava {
+    border: 2px solid cyan;
+    background-image: linear-gradient(90deg, #009b1c 0%, #de9400 50%, #b80000 100%);
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 0 5px;
+}
+
+/* CPU */
+#cpu {
+    background: linear-gradient(to right, #00c6fb 0%, #005bea 100%);
+}
+
+/* RAM */
+#memory {
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+
+/* Temp */
+#temperature {
+    background-image: linear-gradient(to right, #00a7de 0%, #fc00ff 100%);
+}
+
+
+/* Hyperland title */
+#window {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 0 10px;
+    text-shadow: 0 0 3px black;
 }
 
 #tray {
     background: transparent;
 }
 
-#clock {
-    margin-left: 0px;
+#network {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+#clock {
+    margin-left: 0px;
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
 
 #tray > .passive {
     -gtk-icon-effect: dim;

@@ -6,10 +6,34 @@
     //"width": 5, // Waybar width
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["cpu", "memory",  "temperature", "upower",],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": [ "tray","idle_inhibitor", "power-profiles-daemon",  "pulseaudio", "network", "backlight", "clock"],
+    "modules-left": ["custom/apps", "custom/power", "idle_inhibitor", "power-profiles-daemon", "group/audio", "hyprland/workspaces", "upower",],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [ "tray", "temperature", "memory",   "cpu", "network", "backlight", "clock"],
     //Modules configuration
+
+    "cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 60,
+            "autosens": 1,
+            //"sensitivity": 2,
+            "bars": 10,
+            "lower_cutoff_freq": 40,
+            "higher_cutoff_freq": 15000,
+            "method": "pulse",
+            "source": "auto",
+            "stereo": false,
+            "reverse": false,
+            "bar_delimiter": 0,
+            "monstercat": false,
+            "waves": true,
+            "noise_reduction": 0.12,
+            "input_delay": 2,
+            "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+            "on-click": "exec pavucontrol",
+            "actions": {
+                    "on-click-right": "mode",
+                    }
+        },
 
     "hyprland/workspaces": {
         "all-outputs": true,
@@ -26,17 +50,17 @@
     },
 
     "tray": {
-        "icon-size": 15,
-        "spacing": 6
+        "icon-size": 10,
+        "spacing": 20
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%b %e}",
+        "format": "󰅐 {:%I:%M %p}",
+        "format-alt": " {:%b %e}",
         "timezone": "Australia/Melbourne",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "month",
+                    "mode"          : "year",
 
                     "mode-mon-col"  : 3,
                     "weeks-pos"     : "right",
@@ -63,8 +87,8 @@
         "thermal-zone": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "critical-threshold": 80,
-        "format": "Tmp:{temperatureC:3}°C",
-        "format-icons": ["󰼩", "󱩱", "󰼷"]
+        "format": "{icon}{temperatureC:3}°C",
+        "format-icons": ["", "", "", ""]
     },
     "backlight": {
         //"device": "acpi_video1",
@@ -81,76 +105,82 @@
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "interval": 60,
-        "format": "Net: {ifname}",
-        "format-wifi": "Wi-Fi",
+        "interval": 2,
+        "format": "{icon} {ifname}",
+        "format-icons": {
+            "default": "󰤨",
+            "ethernet": "󰈀",
+            "wifi": "󰖩",
+            "disconnected": "󱘖"
+        },
         "tooltip-format": "LAN IP: {ipaddr} Gateway: {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Dscnt",
         "min-length": 1
     },
 
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio", // First element is the "group leader" and won't ever be hidden
+            "cava"
+        ]
+    },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "on-click": "exec pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "ignored-sinks": ["Easy Effects Sink"],
-        "format": "Vol:{volume:3}%",
-        "format-bluetooth": "󰥰 {volume:3}%",
-        "format-muted": "Vol: Mtd"
+        "format": "{icon}{volume:3}%",
+        "format-muted": " Mute",
+        "format-icons": {
+            "alsa_output.usb-Topping_E30_II_Lite-00.HiFi__Headphones__sink": "󰓃 ",
+            "headphone": " ",
+            "default": ["󰓃 "]
+        }
 
     },
 
     "cpu": {
     "interval": 1,
-    "format": "Cpu:{usage:3}%",
+    "format": "{usage:3}%",
     "on-click": "exec kitty btop"
     },
 
     "memory": {
     "interval": 5,
-    "format": "Ram:{percentage:3}%",
+    "format": "{percentage:3}%",
     "on-click": "exec kitty btop"
     },
 
     "power-profiles-daemon": {
-    "format": "Pwr: {icon}",
-    "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
+    "format": "{icon}",
+    "tooltip-format": "{profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-    "default": "Def",
-    "performance": "Prf",
-    "balanced": "Bal",
-    "power-saver": "Eco"
+    "default": "󰃍",
+    "performance": "󰓅",
+    "balanced": "󰗑",
+    "power-saver": "󰌪"
     }
-},
+    },
 
     "idle_inhibitor": {
-    "format": "Idl: {icon}",
+    "format": "{icon}",
     "format-icons": {
-        "activated": "Act",
-        "deactivated": "Dct"
+        "activated": "",
+        "deactivated": ""
     }
     },
 
-    "custom/arrow" : {
-        "format": "",
-        "tooltip-format": "Tray Expander"
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip-format": "Power Menu",
+        "on-click": "exec ~/.config/waybar/scripts/powermenu.sh",
     },
 
-    "group/tray": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-power",
-            "transition-left-to-right": false,
-        },
-        "modules": [
-            "custom/arrow", // First element is the "group leader" and won't ever be hidden
-            "tray"
-        ]
-    },
+    "custom/apps": {
+        "format": "󰣇",
+        "tooltip-format": "Apps Menu",
+        "on-click": "rofi -show drun",
+    }
 
 }
-    
