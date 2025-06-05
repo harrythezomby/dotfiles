@@ -49,7 +49,7 @@
         "rewrite": {
         "": "Hyprland | Harija"
         },
-        "max-length": 50,
+        "max-length": 70,
         "separate-outputs": false
     },
 
