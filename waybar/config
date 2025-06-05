@@ -49,7 +49,7 @@
         "rewrite": {
         "": "Hyprland | Harija"
         },
-        "max-length": 140,
+        "max-length": 50,
         "separate-outputs": false
     },
 
@@ -112,6 +112,7 @@
     "network": {
         "interval": 2,
         "format": "{icon} {ifname}",
+        "format-wifi": "{icon} {essid}",
         "format-icons": {
             "default": "󰤨",
             "ethernet": "󰈀",
@@ -119,7 +120,8 @@
             "disconnected": "󱘖"
         },
         "tooltip-format": "LAN IP: {ipaddr} Gateway: {gwaddr}",
-        "min-length": 1
+        "min-length": 1,
+        "max-length": 5
     },
 
     "group/audio": {
