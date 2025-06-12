@@ -121,7 +121,7 @@
         },
         "tooltip-format": "LAN IP: {ipaddr} Gateway: {gwaddr}",
         "min-length": 1,
-        "max-length": 5
+        "max-length": 10
     },
 
     "group/audio": {
